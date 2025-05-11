@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+    body{
+      background-image: url('/images/result.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .add{
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-family: "Cabin", Sans-Serif;
+      cursor: pointer;
+      color:#fff;
+      background-color: #FFA500;
+      width: 50px;
+      height: 20px;
+      left: 20px;
+      bottom: 80px;
+      border: 2px solid #FFA500;
+      padding: 0;
+      border-radius: 6px;
+      transition: all .1s ease;
+    }
+    .add:hover{
+      background-color: #fff;
+      color:#FFA500;
+    }
+    .butao{
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-family: "Cabin", Sans-Serif;
+      cursor: pointer;
+      color:#fff;
+      background-color: #FFA500;
+      width: 100px;
+      height: 40px;
+      left: 20px;
+      bottom: 80px;
+      border: 2px solid #FFA500;
+      padding: 0;
+      border-radius: 6px;
+      transition: all .1s ease;
+    }
+    .butao:hover{
+      background-color: #fff;
+      color:#FFA500;
+    }
+    .checked {
+      text-decoration: line-through;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test to do list</title> 
+    </head>
+    <body>
+      <h1>Treino do dia</h1>
+      <form name="form_main">
+        <label for="task">Tarefa: </label> 
+        <input type="text" name="task" id="task" /> <br />
+        <button type="button" class="add" onclick="add()">Add</button>
+        </form>
+      <fieldset>
+        <legend>Treinos:</legend>
+        <ul>
+          </ul>
+      </fieldset>
+      <div class="rouutine">
+        <button id="butao" class="butao">ver rotina feita por IA</button>
+        <div id="rotinaIA" class="rotinaIA"></div>
+      </div>
+      <script src="todolist.js"></script>
+      <script type="module">
+        const butao=document.getElementById("butao")
+        const rotinaIA=document.getElementById("rotinaIA")
+        butao.addEventListener("click", ()=>{
+        rotinaIA.innerText=localStorage.getItem("rotina")
+        })
+        
+      </script>
+    </body>
+    </html>
